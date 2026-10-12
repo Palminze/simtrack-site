@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SimTrack: help and troubleshooting</title>
+<meta name="description" content="Fixes for the common SimTrack problems: the phone can't connect, the certificate, nothing moves in game, the view moves the wrong way, lag, and how to update.">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<nav><a class="brand" href="index.html">SIM<span>TRACK</span></a><span class="what">help</span></nav>
+<main>
+<h1>Help and troubleshooting</h1>
+<p class="meta">Most problems are one of the five below. If yours isn't, ask on Discord and attach your log file (see the last section).</p>
+
+<h2 id="connect">The phone can't reach the PC</h2>
+<ul>
+  <li><strong>Same WiFi.</strong> The phone and the PC must be on the same network. Guest networks and "client isolation" on some routers block it.</li>
+  <li><strong>Windows firewall.</strong> The first time SimTrack runs, Windows asks whether to allow it. If you clicked Cancel, open <em>Windows Security, Firewall, Allow an app through firewall</em>, find SimTrack and tick <em>Private</em>.</li>
+  <li><strong>VPN.</strong> A VPN on the phone or the PC can hide one from the other. Turn it off while you play.</li>
+  <li><strong>Address changed.</strong> If your router gave the PC a new address, scan the QR code in the SimTrack window again.</li>
+</ul>
+
+<h2 id="certificate">The certificate step</h2>
+<p>Phone browsers only allow the camera on secure links, so the setup page installs a small certificate that makes your phone trust your own PC. It's done once per phone.</p>
+<ul>
+  <li><strong>iPhone:</strong> after downloading it, open <em>Settings</em> and tap <em>Profile Downloaded</em> near the top (or <em>General, VPN and Device Management</em>) to install it. Then open <em>Settings, General, About, Certificate Trust Settings</em> and switch SimTrack on. Both steps are needed.</li>
+  <li><strong>Android:</strong> open <em>Settings, Security, Encryption and credentials, Install a certificate, CA certificate</em> and pick the downloaded file. Menu names vary a little by phone maker.</li>
+  <li>If the tracker page still says it isn't secure, close the browser tab completely and open the tracker link again.</li>
+</ul>
+
+<h2 id="game">Nothing moves in the game</h2>
+<ol>
+  <li>Start SimTrack <strong>before</strong> the game.</li>
+  <li>In the SimTrack window, press <strong>TEST MOTION</strong>. The view should sweep left, right, up, down and tilt. If the reticle moves but the game doesn't, the game isn't reading head tracking yet.</li>
+  <li>Turn on head tracking, TrackIR or FreeTrack in the game's settings. Some games call it "head tracking", others list it under controls or camera.</li>
+  <li>When a game connects, the SimTrack window shows <em>Game connected</em>. If it never does, restart the game with SimTrack already running.</li>
+</ol>
+
+<h2 id="direction">The view moves the wrong way or too little</h2>
+<ul>
+  <li><strong>Too little or too much:</strong> use the <em>Turn</em>, <em>Look up/down</em> and <em>Tilt</em> sliders in the SimTrack window. Higher means the view turns further than your head.</li>
+  <li><strong>Drifts off center:</strong> look straight ahead and press <em>CENTER</em> (or Scroll Lock while you play).</li>
+  <li><strong>Reversed direction:</strong> create a file called <code>config.json</code> next to SimTrack.exe containing <code>{"invert_yaw": true}</code>. Use <code>invert_pitch</code> or <code>invert_roll</code> for the other axes, then restart SimTrack.</li>
+</ul>
+
+<h2 id="lag">It feels laggy or shaky</h2>
+<ul>
+  <li>Use 5 GHz WiFi and keep the phone close to the router.</li>
+  <li>Plug the phone in. Some phones slow the camera down on battery saver.</li>
+  <li>The smoothing switch on the phone trades steadiness for speed. Lower is quicker, higher is calmer.</li>
+  <li>Light your face from the front. A bright window behind you makes tracking jittery.</li>
+</ul>
+
+<h2 id="update">Updating SimTrack</h2>
+<p>When a new version is out, the SimTrack window shows an orange bar at the top. Download the new zip from the link in your purchase email, close SimTrack, and replace the old folder with the new one. Your settings and the phone certificate are kept, so there's nothing to set up again.</p>
+<p>SimTrack asks this website once at startup which version is current. That request carries no information about you. To turn it off, add <code>"check_updates": false</code> to <code>config.json</code>.</p>
+
+<h2 id="logs">Sending your log file</h2>
+<p>In the SimTrack window, click <strong>Open log folder</strong> at the bottom. Attach <code>simtrack.log</code> to your Discord post or email. It contains startup messages and errors, never camera images.</p>
+
+<p class="back"><a href="index.html">Back to SimTrack</a></p>
+</main>
+</body>
+</html>

@@ -9,15 +9,16 @@
 <nav><a class="brand" href="index.html">SIM<span>TRACK</span></a><span class="what">privacy</span></nav>
 <main>
 <h1>Privacy</h1>
-<p class="meta">Last updated 14 September 2026 · <em>draft for review before launch</em></p>
+<p class="meta">Last updated 12 October 2026 · <em>draft for review before launch</em></p>
 
 <h2>The short version</h2>
-<p>The camera image never leaves your phone. SimTrack has no account, no cloud, and no analytics. The only data that travels is three head angles per frame, from your phone to your PC, over your own WiFi.</p>
+<p>The camera image never leaves your phone. SimTrack has no account, no cloud, and no analytics. The only data that travels is three head angles per frame, from your phone to your PC, over your own WiFi, plus one version check at startup (below).</p>
 
 <h2>In the app</h2>
 <ul>
   <li><strong>Camera.</strong> Face tracking runs in your phone's browser using an on-device model. No frame is stored or transmitted.</li>
   <li><strong>Network.</strong> The phone connects to your PC on your local network using a certificate your PC creates for itself. Nothing is sent to us or to any third party.</li>
+  <li><strong>Update check.</strong> Once when it starts, SimTrack downloads a small file from our website (hosted by GitHub Pages) that says which version is current. The request carries nothing about you, though like any web request it reveals your IP address to the host. Turn it off with <code>"check_updates": false</code> in <code>config.json</code>.</li>
   <li><strong>On your PC.</strong> SimTrack stores its certificate and a log file in your user folder (<code>%LOCALAPPDATA%\SimTrack</code>). The log contains technical status lines, never video. You may delete both at any time.</li>
   <li><strong>On your phone.</strong> Your smoothing preference is stored in the browser's local storage. That's all.</li>
 </ul>
