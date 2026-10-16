@@ -430,6 +430,11 @@
     };
     document.head.appendChild(js);
   }
+  if (!CHECKOUT_URL) {
+    // Store not live yet: no dead buttons. Each one asks to be told at launch.
+    const notify = "mailto:" + SUPPORT_MAIL + "?subject=" + encodeURIComponent("Tell me when SimTrack is on sale");
+    document.querySelectorAll(".buy-link").forEach(a => { a.href = notify; a.textContent = "Notify me at launch"; });
+  }
   if (DISCORD_URL) document.getElementById("discord").href = DISCORD_URL; else document.getElementById("discord").remove();
   if (SUPPORT_MAIL) document.getElementById("mail").href = "mailto:" + SUPPORT_MAIL; else document.getElementById("mail").remove();
 </script>
