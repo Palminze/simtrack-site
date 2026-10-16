@@ -416,7 +416,7 @@
   // Fill these in once the store and community exist. One place, every button.
   const CHECKOUT_URL = "";          // e.g. https://simtrack.lemonsqueezy.com/checkout/buy/xxxxxxxx
   const DISCORD_URL  = "";          // e.g. https://discord.gg/xxxxxxx
-  const SUPPORT_MAIL = "";          // e.g. hello@simtrack.example
+  const SUPPORT_MAIL = "support@getsimtrack.com";
   if (CHECKOUT_URL) document.querySelectorAll(".buy-link").forEach(a => a.href = CHECKOUT_URL);
   if (DISCORD_URL) document.getElementById("discord").href = DISCORD_URL; else document.getElementById("discord").remove();
   if (SUPPORT_MAIL) document.getElementById("mail").href = "mailto:" + SUPPORT_MAIL; else document.getElementById("mail").remove();
