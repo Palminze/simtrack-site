@@ -417,7 +417,19 @@
   const CHECKOUT_URL = "";          // e.g. https://simtrack.lemonsqueezy.com/checkout/buy/xxxxxxxx
   const DISCORD_URL  = "";          // e.g. https://discord.gg/xxxxxxx
   const SUPPORT_MAIL = "support@getsimtrack.com";
-  if (CHECKOUT_URL) document.querySelectorAll(".buy-link").forEach(a => a.href = CHECKOUT_URL);
+  if (CHECKOUT_URL) {
+    const links = document.querySelectorAll(".buy-link");
+    links.forEach(a => a.href = CHECKOUT_URL);
+    // Checkout opens as an overlay on this page (Lemon Squeezy's lemon.js).
+    // If the script can't load, the plain links still open the checkout page.
+    const js = document.createElement("script");
+    js.src = "https://app.lemonsqueezy.com/js/lemon.js"; js.defer = true;
+    js.onload = () => {
+      links.forEach(a => { a.href = CHECKOUT_URL + (CHECKOUT_URL.includes("?") ? "&" : "?") + "embed=1"; a.classList.add("lemonsqueezy-button"); });
+      if (window.createLemonSqueezy) window.createLemonSqueezy();
+    };
+    document.head.appendChild(js);
+  }
   if (DISCORD_URL) document.getElementById("discord").href = DISCORD_URL; else document.getElementById("discord").remove();
   if (SUPPORT_MAIL) document.getElementById("mail").href = "mailto:" + SUPPORT_MAIL; else document.getElementById("mail").remove();
 </script>
