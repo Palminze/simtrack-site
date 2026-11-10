@@ -9,7 +9,7 @@
 <nav><a class="brand" href="index.html">SIM<span>TRACK</span></a><span class="what">privacy</span></nav>
 <main>
 <h1>Privacy</h1>
-<p class="meta">Last updated 12 October 2026 · <em>draft for review before launch</em></p>
+<p class="meta">Last updated 4 November 2026 · <em>draft for review before launch</em></p>
 
 <h2>The short version</h2>
 <p>The camera image never leaves your phone. SimTrack has no account, no cloud, and no analytics. The only data that travels is your head position (six numbers per frame), from your phone to your PC, over your own WiFi, plus a version check at startup and a licence check every few days (below).</p>
@@ -20,7 +20,7 @@
   <li><strong>Network.</strong> The phone connects to your PC on your local network using a certificate your PC creates for itself. Tracking data stays on your network.</li>
   <li><strong>Licence check.</strong> When you enter your licence key, and about every 3 days after that, SimTrack sends the key and an anonymous ID for your PC (a one-way hash, not your PC's name or serial) to Lemon Squeezy, our merchant of record, to confirm the key is valid and count how many PCs use it. Nothing else is sent. If you're offline, SimTrack keeps working for 14 days before it needs to check again.</li>
   <li><strong>Update check.</strong> Once when it starts, SimTrack downloads a small file from our website (hosted by GitHub Pages) that says which version is current. The request carries nothing about you, though like any web request it reveals your IP address to the host. Turn it off with <code>"check_updates": false</code> in <code>config.json</code>.</li>
-  <li><strong>On your PC.</strong> SimTrack stores its certificate, settings, licence status and a log file in your user folder (<code>%LOCALAPPDATA%\SimTrack</code>), and the date your free trial started in your user registry. The log contains technical status lines, never video. You may delete these at any time; deleting the licence status means entering your key again.</li>
+  <li><strong>On your PC.</strong> SimTrack stores its certificate, settings, licence status and a log file in your user folder (<code>%LOCALAPPDATA%\SimTrack</code>), and, during the free trial, which days you used it and how long it tracked, also in your user registry. To list your games and use each game's own settings, SimTrack checks which supported games are installed (from Steam's library files and a few standard folders) and which one is running. This stays on your PC. The log contains technical status lines, never video. You may delete these at any time; deleting the licence status means entering your key again.</li>
   <li><strong>On your phone.</strong> Your smoothing preference is stored in the browser's local storage. That's all.</li>
 </ul>
 

@@ -10,7 +10,7 @@
 <nav><a class="brand" href="index.html">SIM<span>TRACK</span></a><span class="what">help</span></nav>
 <main>
 <h1>Help and troubleshooting</h1>
-<p class="meta">Most problems are one of the five below. If yours isn't, ask on Discord and attach your log file (see the last section).</p>
+<p class="meta">Most problems are covered below. If yours isn't, ask on Discord and attach your log file (see the last section).</p>
 
 <h2 id="connect">The phone can't reach the PC</h2>
 <ul>
@@ -33,13 +33,28 @@
   <li>Start SimTrack <strong>before</strong> the game.</li>
   <li>In the SimTrack window, press <strong>TEST MOTION</strong>. The view should sweep left, right, up, down and tilt. If the reticle moves but the game doesn't, the game isn't reading head tracking yet.</li>
   <li>Turn on head tracking, TrackIR or FreeTrack in the game's settings. Some games call it "head tracking", others list it under controls or camera.</li>
-  <li>When a game connects, the SimTrack window shows <em>Game connected</em>. If it never does, restart the game with SimTrack already running.</li>
+  <li>When a TrackIR game connects, the SimTrack window shows <em>GAME:</em> and the game's name. If it never does, restart the game with SimTrack already running.</li>
 </ol>
+
+<h2 id="games">Setting up each game</h2>
+<p>The Games card in the SimTrack window lists the supported games installed on your PC, with the same tips.</p>
+<ul>
+  <li><strong>Nothing to set up</strong>, just start SimTrack first: Assetto Corsa (verified), Assetto Corsa Competizione, iRacing, Le Mans Ultimate, rFactor 2, RaceRoom, DiRT Rally 2.0, Project CARS 2, MS Flight Simulator 2020 and 2024, IL-2 Great Battles, Elite Dangerous, Star Citizen.</li>
+  <li><strong>Euro Truck Simulator 2</strong> (verified) and <strong>American Truck Simulator</strong>: Options → Controls → Head tracking → FreeTrack.</li>
+  <li><strong>BeamNG.drive:</strong> turn on FreeTrack in the game's controls options.</li>
+  <li><strong>DCS World:</strong> start SimTrack before DCS. It looks for head tracking only when it launches.</li>
+  <li><strong>Automobilista 2:</strong> reads head tracking only in SteamVR mode with the helmet camera, the same as with real TrackIR.</li>
+  <li><strong>X-Plane:</strong> needs a TrackIR plugin for X-Plane.</li>
+</ul>
+<p>Only games marked verified have been run with SimTrack so far. The others read TrackIR or FreeTrack and are expected to work.</p>
+
+<h2 id="anticheat">Games with anti-cheat</h2>
+<p>Some anti-cheat systems allow only TrackIR's own files and block SimTrack's. War Thunder's (BattlEye) does this for now: it shows a message that it blocked <code>NPClient64.dll</code>. Nothing is wrong with your PC, and no setting fixes it. Don't try to get around the anti-cheat: that breaks the game's rules and can get your account banned. If a game you bought SimTrack for blocks it, ask for a refund within 14 days.</p>
 
 <h2 id="direction">The view moves the wrong way or too little</h2>
 <ul>
   <li><strong>Too little or too much:</strong> use the <em>Turn</em>, <em>Look up/down</em> and <em>Tilt</em> sliders in the SimTrack window. Higher means the view turns further than your head.</li>
-  <li><strong>Drifts off center:</strong> look straight ahead and press <em>CENTER</em> (or Scroll Lock while you play).</li>
+  <li><strong>Drifts off center:</strong> look straight ahead and press <em>CENTER</em>, Scroll Lock, or the wheel button you bound with <em>WHEEL BUTTON</em>.</li>
   <li><strong>Reversed direction:</strong> create a file called <code>config.json</code> next to SimTrack.exe containing <code>{"invert_yaw": true}</code>. Use <code>invert_pitch</code> or <code>invert_roll</code> for the other axes, then restart SimTrack.</li>
 </ul>
 
